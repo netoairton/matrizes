@@ -31,13 +31,19 @@
     */
     template <typename T>
     T **multiplicaI(T **A, T **B, int n) {
+        int soma;
         int **ret = new int*[n];
-        for(int i = 0; i < n; i++)
-            ret[i] = new int[n];
-        
-        
-
-        return ret;
+        for(int i=0; i<n; i++){
+            ret[i]= new int[n];
+            for(int j=0; j<n; j++){
+                soma=0;
+                for(int k=0; k<n; k++){
+                    soma= soma+ (A[i][k]) * (B[k][j]);
+                }
+            ret[i][j]=soma;
+            }
+        }
+    return ret;
     }
 
     /**
